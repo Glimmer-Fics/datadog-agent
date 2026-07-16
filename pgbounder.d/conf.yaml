@@ -1,0 +1,14 @@
+init_config:
+  service: pgbouncer
+
+instances:
+  - database_url: "%%env_PGBOUNCER_STATS_URL%%"
+    min_collection_interval: 15
+
+    # Avoid high-cardinality metrics for every individual socket.
+    collect_per_client_metrics: false
+    collect_per_server_metrics: false
+
+    tags:
+      - env:production
+      - component:database-pooler

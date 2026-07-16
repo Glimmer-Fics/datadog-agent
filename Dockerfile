@@ -19,3 +19,5 @@ ARG RENDER_SERVICE_NAME=datadog
 
 ENV DD_BIND_HOST=$RENDER_SERVICE_NAME
 ENV DD_HOSTNAME=$RENDER_SERVICE_NAME
+
+COPY pgbouncer.d/conf.yaml /etc/datadog-agent/conf.d/pgbouncer.d/conf.yaml
